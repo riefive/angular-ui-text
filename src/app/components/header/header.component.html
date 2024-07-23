@@ -4,9 +4,7 @@
     <span class="text-[24px] font-thin">Network</span>
   </p>
   <div class="flex-auto flex flex-row gap-4">
-    <div
-      class="flex-auto flex items-center justify-between bg-white mb-3"
-    >
+    <div class="flex-auto flex items-center justify-between bg-white mb-3">
       <input
         type="text"
         class="peer block min-h-[auto] w-full h-[44px] rounded border-0 px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary"
@@ -73,3 +71,26 @@
     </div>
   </div>
 </div>
+
+<nav class="w-full">
+  <hr class="my-4 h-0.5 border-t-0 bg-white dark:bg-white" />
+  <ol class="list-reset flex text-xl">
+    @for (item of names; track item; let i = $index) {
+    <li>
+      <a
+        href="#"
+        class="text-white transition duration-150 ease-in-out hover:text-primary-accent-300 focus:text-primary-accent-300 active:text-primary-accent-300 motion-reduce:transition-none dark:text-primary-400"
+      >
+        {{ item }}
+      </a>
+    </li>
+    @if (i < names.length - 1) {
+    <li>
+      <span class="mx-4 text-white">/</span>
+    </li>
+    } } @empty {
+    <li>Empty list</li>
+    }
+  </ol>
+  <hr class="my-4 h-0.5 border-t-0 bg-white dark:bg-white" />
+</nav>
