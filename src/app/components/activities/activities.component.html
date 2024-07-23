@@ -1,0 +1,89 @@
+<div class="flex flex-col gap-2 my-2">
+  <div class="flex flex-row items-center justify-between text-white">
+    <span class="text-[30px] font-medium">Activity</span>
+    <span class="font-thin">View timeline / Filter Activities</span>
+  </div>
+  <hr class="my-4 h-0.5 border-t-0 bg-white dark:bg-white" />
+  <div class="flex flex-col gap-2">
+    @for (item of activities; track item.id; let i = $index) {
+    <div class="flex flex-row items-center gap-3 mb-1">
+      <div class="flex-none bg-white rounded-md w-[120px] h-[90px]"></div>
+      <div class="flex flex-col items-start gap-1 text-white">
+        <div>
+          <span class="text-xl font-bold mr-2">{{ item.name }}</span>
+          <span class="text-sm font-light">{{ item.category }}</span>
+        </div>
+        <div>
+          <span class="text-md font-light">{{ item.content }}</span>
+        </div>
+        <div class="flex flex-row items-center gap-1">
+          @if (item.type === 'video') {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#ffffff"
+          >
+            <path
+              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z"
+            />
+          </svg>
+          } @else if (item.type === 'chat') {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#ffffff"
+          >
+            <path
+              d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
+            />
+          </svg>
+          } @else if (item.type === 'document') {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#ffffff"
+          >
+            <path
+              d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+            />
+          </svg>
+          } @else if (item.type === 'like') {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#ffffff"
+          >
+            <path
+              d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"
+            />
+          </svg>
+          } @else if (item.type === 'unlock') {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#ffffff"
+          >
+            <path
+              d="M240-160h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Zm0 80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h280v-80q0-83 58.5-141.5T720-920q83 0 141.5 58.5T920-720h-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80h120q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Z"
+            />
+          </svg>
+          }
+          <span class="text-md font-light">{{ item.time }}</span>
+        </div>
+      </div>
+    </div>
+    } @empty {
+    <li>Empty list</li>
+    }
+  </div>
+</div>
