@@ -1,1 +1,19 @@
-<p>channels works!</p>
+<div class="flex flex-col gap-2 my-2">
+  <div class="flex flex-row items-center justify-between text-white">
+    <span class="text-[30px] font-medium">Channels</span>
+    <span class="font-thin">Browse all channels</span>
+  </div>
+  <hr class="my-4 h-0.5 border-t-0 bg-white dark:bg-white" />
+  <div class="flex flex-wrap gap-2">
+    @for (item of channels; track item.id; let i = $index) {
+    <div class="relative flex-auto bg-white rounded-md basis-1/3 h-[120px]">
+      <div class="absolute bottom-2 w-full p-2 text-[#9f1239]">
+        <div class="flex flex-row items-end justify-start gap-1">
+          <span class="text-[18px] font-normal"> {{ item.name }}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <hr class="mt-4 h-0.5 border-t-0 bg-white dark:bg-white" />
+</div>

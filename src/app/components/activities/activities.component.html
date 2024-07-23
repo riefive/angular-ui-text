@@ -4,10 +4,10 @@
     <span class="font-thin">View timeline / Filter Activities</span>
   </div>
   <hr class="my-4 h-0.5 border-t-0 bg-white dark:bg-white" />
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-1">
     @for (item of activities; track item.id; let i = $index) {
-    <div class="flex flex-row items-center gap-3 mb-1">
-      <div class="flex-none bg-white rounded-md w-[120px] h-[90px]"></div>
+    <div class="flex flex-row items-center gap-2 mb-1">
+      <div class="flex-none bg-white rounded-md w-[90px] h-[90px]"></div>
       <div class="flex flex-col items-start gap-1 text-white">
         <div>
           <span class="text-xl font-bold mr-2">{{ item.name }}</span>

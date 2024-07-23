@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './documents.component.css'
 })
 export class DocumentsComponent {
-
+  year = new Date().getFullYear();
 }
