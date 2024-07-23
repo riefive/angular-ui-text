@@ -44,7 +44,7 @@
       </svg>
     </div>
   </div>
-  <nav class="w-full mb-4">
+  <nav class="w-full mb-4 hidden md:block lg:block xl:block 2xl:block">
     <ol class="list-reset flex text-md">
       @for (item of names; track item; let i = $index) {
       <li>
@@ -63,6 +63,13 @@
       <li>Empty list</li>
       }
     </ol>
+  </nav>
+  <nav class="w-full mb-4 block md:hidden lg:hidden xl:hidden 2xl:hidden">
+    <div class="flex flex-col gap-2">
+      @for (item of names; track item; let i = $index) {
+        <div class="text-white">{{ item }}</div>
+      }
+    </div>
   </nav>
   <div class="flex flex-row">
     <span class="text-md text-white"

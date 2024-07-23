@@ -1,20 +1,11 @@
-import { Component } from '@angular/core';
-import { Input, Ripple, initTWE } from 'tw-elements';
+import { Injectable } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject, takeUntil } from 'rxjs';
-import { HeaderComponent } from './components/header/header.component';
-import { HeaderSmallComponent } from './components/header-small/header-small.component';
 
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [HeaderComponent, HeaderSmallComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title = 'angular-ux-test';
+export class ScreenService {
   destroyed = new Subject<void>();
   currentScreenSize!: string;
 
@@ -46,12 +37,7 @@ export class AppComponent {
       });
   }
 
-  ngOnInit() {
-    initTWE({ Input, Ripple });
-  }
-
-  ngOnDestroy() {
-    this.destroyed.next();
-    this.destroyed.complete();
+  getScreenSize(): string {
+    return this.currentScreenSize;
   }
 }

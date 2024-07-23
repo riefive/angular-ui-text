@@ -1,7 +1,11 @@
 <div class="flex flex-col gap-2 my-2">
   <div class="flex flex-row items-center justify-between text-white">
     <span class="text-[30px] font-medium">Activity</span>
-    <span class="font-thin">View timeline / Filter Activities</span>
+    <div class="hidden md:block lg:block xl:block 2xl:block">
+      <div class="font-thin">View timeline /</div>
+      <div class="font-thin">Filter activities</div>
+    </div>
+    <span class="font-thin block md:hidden lg:hidden xl:hidden 2xl:hidden">View activities</span>
   </div>
   <hr class="my-4 h-0.5 border-t-0 bg-white dark:bg-white" />
   <div class="flex flex-col gap-1">

@@ -1,4 +1,5 @@
 <div class="flex flex-row gap-2 my-2">
+  @if (currentScreenSize !== 'XSmall') {
   <div class="flex flex-col gap-1">
     <div class="flex flex-row items-center justify-between text-white">
       <span class="text-[30px] font-medium">Documents</span>
@@ -46,7 +47,7 @@
       </div>
     </div>
   </div>
-  <div class="flex flex-col gap-3 mt-[75px] ml-1">
+  <div class="flex flex-col gap-3 mt-[52px] ml-1">
     <div class="flex-none relative bg-white rounded-md w-[285px] h-[200px]">
       <div class="absolute bottom-2 w-full p-2 text-[#9f1239]">
         <div class="flex flex-row items-end justify-between gap-1">
@@ -87,4 +88,5 @@
       </div>
     </div>
   </div>
+  }
 </div>

@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="" style="background-color: #9f1239">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon style="color: white">menu</mat-icon>
+  </button>
+  <div class="text-white">
+    <span class="text-[24px] font-medium mr-1">Social</span>
+    <span class="text-[24px] font-thin">Network</span>
+  </div>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="false" mode="side" position="start">
+    <mat-nav-list>
+      @for (item of names; track item; let i = $index) {
+      <mat-list-item>
+        <span class="text-[#9f1239]">
+          {{ item }}
+        </span>
+      </mat-list-item>
+      } @empty {
+      <mat-list-item>Empty list</mat-list-item>
+      }
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content style="width: 100%; background-color: #9f1239">
+    <div class="min-h-screen p-4">
+      <router-outlet />
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
